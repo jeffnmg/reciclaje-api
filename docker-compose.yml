@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  api:
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      - PORT=8080
+    volumes:
+      # Montar código para hot-reload (opcional, para desarrollo)
+      - ./app.py:/app/app.py
+    restart: unless-stopped
+    # Limitar recursos (simula Cloud Run)
+    deploy:
+      resources:
+        limits:
+          cpus: '2'
+          memory: 4G
+        reservations:
+          cpus: '1'
+          memory: 2G
