@@ -301,15 +301,6 @@ response = requests.post(url, files=files)
 print(response.json())
 ```
 
-
-## Licencia
-
-[Especificar licencia del proyecto]
-
-## Contacto y Soporte
-
-[Información de contacto del mantenedor]
-
 ---
 
 **Versión**: 2.0  
