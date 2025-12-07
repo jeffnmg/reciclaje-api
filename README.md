@@ -1,4 +1,4 @@
-# API de Clasificación de Residuos Reciclables - Colombia
+# API de EcoScan - Colombia
 
 ## Descripción General
 
@@ -161,7 +161,6 @@ Clasificación de imagen para aplicaciones web.
   "objeto_detectado_espanol": "Botella de agua",
   "confianza": 87.5,
   "nivel_confianza": "alta",
-  "emoji_confianza": "✅",
   "sugerencia_foto": null,
   "tipo": "Plástico",
   "caneca": "CANECA BLANCA",
@@ -302,35 +301,6 @@ response = requests.post(url, files=files)
 print(response.json())
 ```
 
-## Limitaciones Conocidas
-
-1. **Modelo Base**: ResNet-50 está entrenado en ImageNet, no específicamente en residuos. La precisión puede variar con objetos poco comunes.
-
-2. **Procesamiento CPU**: El modelo corre en CPU por compatibilidad con Cloud Run. Para mayor throughput, considerar GPU instances.
-
-3. **Idioma**: Las etiquetas del modelo están en inglés. La traducción al español es manual y limitada a objetos comunes.
-
-4. **Contexto Local**: La clasificación por colores es específica de Colombia y puede no aplicar a otras jurisdicciones.
-
-## Roadmap
-
-- [ ] Implementación de modelo fine-tuned en dataset de residuos
-- [ ] Soporte multi-idioma automático
-- [ ] Cache de resultados con Redis
-- [ ] API de batch processing
-- [ ] SDK cliente en JavaScript/Python
-- [ ] Telemetría con OpenTelemetry
-- [ ] Integración con sistemas de gestión de residuos municipales
-
-## Contribución
-
-Este proyecto sigue las convenciones de Python PEP 8. Para contribuir:
-
-1. Fork del repositorio
-2. Crear feature branch (`git checkout -b feature/nueva-funcionalidad`)
-3. Commit con mensajes descriptivos
-4. Push al branch (`git push origin feature/nueva-funcionalidad`)
-5. Abrir Pull Request
 
 ## Licencia
 
